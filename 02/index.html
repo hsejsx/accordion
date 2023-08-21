@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/9a92ef28ab.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="container">
+      <h1>Skills</h1>
+      <div class="inner">
+        <div class="accordion">
+          <button class="title active" type="button" data-name="html">
+            HTML
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <p class="content">
+            웹 표준과 웹 접근성을 준수하는 HTML 정보 구조설계로 웹사이트
+            퍼블리싱을 해오고 있습니다.<br />
+            특히 웹 표준을 위해 HTML5에서 권장하는 마크업 방식과 시멘틱 태그를
+            사용해 전체 레이아웃을 설계합니다.<br />
+            특히, 웹 사이트를 퍼블리싱 하기 전에 '기능정의서'를 만들고
+            기능정의서에 전체적인 폰트 서식, 컬러 가이드, 사이즈 정보, 상태
+            디자인, HTML 와이어프레임까지 꼼꼼하게 미리 정리해 놓고 체계적인
+            퍼블리싱 작업을 수행합니다.
+          </p>
+          <button class="title" type="button" data-name="css">
+            CSS
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <p class="content">
+            단순히 디자인을 구현하는 것에 멈추는 것이 아닌, 어떤 상황에서든 UI가
+            망가지지 않도록 다양한 상황들을 생각하며 처리합니다.
+          </p>
+          <button class="title" type="button" data-name="js">
+            JavaScript
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <p class="content">
+            네비게이션, 탭 메뉴, 아코디언 등 웹 퍼블리싱에 반드시 필요한
+            상호작용을 위한 제이쿼리는 플러그인을 사용하지 않고 순수한 제이쿼리
+            코딩으로 제작합니다. 바닐라 자바스크립트도 사용 가능하며, 주로
+            제이쿼리와 병행해서 활용합니다.
+          </p>
+        </div>
+        <div class="img"><img src="./images/html.png" alt="html" /></div>
+      </div>
+    </section>
+
+    <script>
+      $('.content').hide().eq(0).show();
+      $('.title').click(function () {
+        const target = $(this);
+        target.addClass('active');
+        target.siblings('.title').removeClass('active');
+        target.siblings('.content').stop().slideUp();
+        target.next().stop().slideDown();
+        console.log(target.data('name'));
+        console.log($('.img img'));
+        $('.img img').attr('src', `./images/${target.data('name')}.png`);
+        $('.img img').attr('alt', target.data('name'));
+      });
+    </script>
+  </body>
+</html>

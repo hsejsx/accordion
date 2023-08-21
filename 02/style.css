@@ -1,0 +1,93 @@
+:root {
+  --color-primary: #203049;
+  --color-white: #fff;
+  --color-orange: #ffa515;
+  --color-text: #222;
+  --color-border: #ddd;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* UI */
+
+.inner {
+  display: flex;
+  gap: 40px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 490px;
+  min-height: 400px;
+}
+
+.title {
+  width: 100%;
+  height: 36px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  border: 1px solid var(--color-border);
+  transition: color 300ms, background-color 300ms;
+}
+
+.title.active {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.title:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.title i {
+  transition: transform 300ms;
+}
+
+.title.active i {
+  color: var(--color-orange);
+  transform: rotateZ(-180deg);
+}
+
+.content {
+  padding: 15px;
+}
+
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+}
+
+.img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
